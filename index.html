@@ -1,0 +1,250 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/i/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title></title>
+  <meta name="description" content="">
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/ui-lightness/jquery-ui.custom.css">
+
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+       Modernizr enables HTML5 elements & feature detects for optimal performance.
+       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="js/libs/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  
+  <div role="main">
+    <header>
+    <navigation>
+      <navitem class="logo"></navitem>
+      <navitem>Culture</navitem>
+      <navitem>Creative Study</navitem>
+      <navitem>Work</navitem>
+      <navitem>The Team</navitem>
+      <navitem>Services</navitem>
+      <navitem>Contact</navitem>
+      <navitem>TW F V YT</navitem>
+    </navigation>
+  </header>
+    <container class="home">
+      <content>
+        <h2><span class="highlight">A digital design agency.</span> Specializing <br> in online visual entertainment</h2>
+        <navigation id="home-icons">
+          <navitem>
+            <icon></icon>
+            <span>Mobile</span>
+          </navitem>
+          <navitem>
+            <icon></icon>
+            <span>Responsive Websites</span>
+          </navitem>
+          <navitem>
+            <icon></icon>
+            <span>Motion</span>
+          </navitem>
+          <navitem>
+            <icon></icon>
+            <span>Video</span>
+          </navitem>
+        </navigation>
+      </content>
+    </container>
+
+    <container class="culture">
+      <content>
+        <h2>We are trendsetters, brand enhancers, visionaries, with infinite creative ideas.</h2>
+        <p>Tim McCracken's vision to create a fully charged digital design agency specializing in online visual entertainment was born in 2008 as Gin and Tonic.  Located in Chapel Hill, North Carolina servicing clients throughout North America and the UK.</p>
+        <p>In today’s digital era, technology constantly evolves whilst the market continually adapts. At Gin and Tonic we embrace this rapid metamorphose and are in the vanguard of the latest trends enabling us to inspire our clients.</p>
+        <p>Today, Tim leads an interactive team of vibrant and talented designers, programmers, producers and animators, whose creative abilities and experiences, aligned with today’s current trends, are designed to achieve success and gain a distinctive edge in today’s marketplace.  Our Team can build the vital tools to successfully reach your target audience through brand recognition and social media, to showcase the impact of digital advertising, from innovative websites, mobile and tablet apps, video production and interactive installations.</p>
+        <p><span>“We make amazing things happen online”.</span></p>
+      </content>
+    </container>
+
+    <container class="creative-study amazing-things">
+      <content>
+          <navigation>
+          <navitem>
+            <span>01</span>Amazing Things: Viral
+          </navitem>
+          <navitem>
+            <span>02</span>Tyco Mobile
+          </navitem>
+          <navitem>
+            <span>03</span>Duke Tip
+          </navitem>
+        </navigation>
+        <study title="amazing-things">
+          <div class="video-container"></div>
+          <h2>Amazing Things Start Here</h2>
+          <p>We're a small team of creative minds.  We've been designing and building websites for clients for 10 years.</p>
+        </study>
+
+        <study title="tyco">
+          <div class="video-container"></div>
+          <h2>Tyco Global People Finder</h2>
+          <p>We're a small team of creative minds.  We've been designing and building websites for clients for 10 years.</p>
+        </study>
+
+        <study title="duke-tip">
+          <div class="video-container"></div>
+          <h2>Duke Tip Website Build</h2>
+          <p>We're a small team of creative minds.  We've been designing and building websites for clients for 10 years.</p>
+        </study>
+      </content>
+    </container>
+
+    <container class="work">
+      <content>
+          <navigation>
+          </navigation>
+          <workitems>
+          </workitems>
+        <script id="workItemTemplate" type="text/template">
+          
+          <div class="screenshot"><img src=<%= screenshot %> /></div>
+          <div class="button-container">
+          <navbutton class="html5-site">HTML5 Site</navbutton>
+          <navbutton class="flash-site">Flash Site</navbutton>
+          </div>
+          
+          <h2><%= name %></h2>
+          <p><%= description %></p>
+        </script>
+
+
+        <script id="workNavTemplate" type="text/template">
+          <span><%= number %></span><%= title %>
+        </script>
+
+        <script id="workNavItemTemplate" type="text/template">
+          <%= name %>
+        </script>
+        
+      </content>
+    </container>
+
+    <container class="team">
+      <content>
+        <h2>Amazing Things Start Here</h2>
+          <navigation>
+          </navigation>
+          <teammembers>
+          </teammembers>
+        
+        <script id="teamMemberTemplate" type="text/template">
+          <portrait><img src=<%= image %> height/></portrait>
+          <description> <%= description %> </description>
+        </script>
+
+
+        <script id="teamMemberNavItemTemplate" type="text/template">
+          <h3><%= name %></h3>
+          <h5><%= role %></h5>
+        </script>
+        
+      </content>
+    </container>
+
+    <container class="services">
+      <content>
+        <h2>Amazing Things Start Here</h2>
+        <diagram><img src="img/services-diagram.png"/></diagram>
+        <services>
+            <service>Idea Generation</service>
+            <service>Digital Strategy</service>
+            <service>Graphic Design</service>
+            <service>Architecture</service>
+            <service>Html 5 - Javascript Websites</service>
+            <service>Mobile & Tablet Apps</service>
+            <service>Flash Animaiton /Banner Ads</service>
+            <service>Viral Campaigns</service>
+            <service>Interactive Demos</service>
+            <service>Social Media - Research</service>
+            <service>Fashion & Retail Brands</service>
+            <service>Webisodes</service>
+            <service>in-Store Visual Displays</service>
+            <service>Web Video Production</service>
+        </services>
+
+        <services>
+            <service>Partner Services</service>
+            <service>Planning And Research</service>
+            <service>3D Animation And Visual Effects</service>
+            <service>Film And Video Production</service>
+        </services>
+        
+      </content>
+    </container>
+
+    <container class="contact">
+      <content>
+        <img src="img/contact-image.png" />
+            <address>400 Meadowmont Village Circle<br >
+              Suite 431, Chapel Hill, NC 27517</address>
+            <ul>
+              <li><span>Email:</span></li>
+              <li><span>Phone:</span></li>
+              <li><span>Follow Us:</span></li>
+              <li><span>Skype:</span></li>
+            </ul>
+        
+        <h2>We Look Forward To Hearing From You</h2>
+      </content>
+    </container>
+<footer>
+
+  </footer>
+  </div>
+  
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+  <!-- scripts concatenated and minified via build script -->
+  <script src="js/libs/underscore.js"></script>
+  <script src="js/libs/backbone.js"></script>
+  <script src="js/libs/jquery-ui.js"></script>
+
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+
+  
+
+  <!-- end scripts -->
+
+  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+       mathiasbynens.be/notes/async-analytics-snippet -->
+  <script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+</body>
+</html>
