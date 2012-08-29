@@ -22,6 +22,7 @@
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/ui-lightness/jquery-ui.custom.css">
+  <link rel="stylesheet" href="css/fancybox/jquery.fancybox.css">
 
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
@@ -36,97 +37,105 @@
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   
   <div role="main">
-    <header>
-    <navigation>
-      <navitem class="logo"></navitem>
-      <navitem>Culture</navitem>
-      <navitem>Creative Study</navitem>
-      <navitem>Work</navitem>
-      <navitem>The Team</navitem>
-      <navitem>Services</navitem>
-      <navitem>Contact</navitem>
-      <navitem>TW F V YT</navitem>
-    </navigation>
-  </header>
-    <container class="home">
-      <content>
+    <div class="header">
+    <div class="navigation">
+      <div class="navitem logo"></div>
+      <div class="navitem">Culture</div>
+      <div class="navitem">Creative Study</div>
+      <div class="navitem">Work</div>
+      <div class="navitem">The Team</div>
+      <div class="navitem">Services</div>
+      <div class="navitem">Contact</div>
+      <div class="navitem">TW F V YT</div>
+    </div>
+  </div>
+    <div class="container home">
+      <div class="content">
         <h2><span class="highlight">A digital design agency.</span> Specializing <br> in online visual entertainment</h2>
-        <navigation id="home-icons">
-          <navitem>
-            <icon></icon>
+        <div class="navigation" id="home-icons">
+          <div class="navitem">
+            <a class="home-images" rel="home-gallery" href="img/home/mobile.png">
+            <div class="icon"></div>
             <span>Mobile</span>
-          </navitem>
-          <navitem>
-            <icon></icon>
+            </a>
+          </div>
+          <div class="navitem">
+            <a class="home-images" rel="home-gallery" href="img/home/responsive-websites.png">
+            <div class="icon"></div>
             <span>Responsive Websites</span>
-          </navitem>
-          <navitem>
-            <icon></icon>
+            </a>
+          </div>
+          <div class="navitem">
+            <a class="home-images" rel="home-gallery" href="img/home/motion.png">
+            <div class="icon"></div>
             <span>Motion</span>
-          </navitem>
-          <navitem>
-            <icon></icon>
+            </a>
+          </div>
+          <div class="navitem">
+            <a class="home-images" rel="home-gallery" href="img/home/video.png">
+            <div class="icon"></div>
             <span>Video</span>
-          </navitem>
-        </navigation>
-      </content>
-    </container>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <container class="culture">
-      <content>
+    <div class="container culture">
+      <div class="content">
         <h2>We are trendsetters, brand enhancers, visionaries, with infinite creative ideas.</h2>
         <p>Tim McCracken's vision to create a fully charged digital design agency specializing in online visual entertainment was born in 2008 as Gin and Tonic.  Located in Chapel Hill, North Carolina servicing clients throughout North America and the UK.</p>
         <p>In today’s digital era, technology constantly evolves whilst the market continually adapts. At Gin and Tonic we embrace this rapid metamorphose and are in the vanguard of the latest trends enabling us to inspire our clients.</p>
         <p>Today, Tim leads an interactive team of vibrant and talented designers, programmers, producers and animators, whose creative abilities and experiences, aligned with today’s current trends, are designed to achieve success and gain a distinctive edge in today’s marketplace.  Our Team can build the vital tools to successfully reach your target audience through brand recognition and social media, to showcase the impact of digital advertising, from innovative websites, mobile and tablet apps, video production and interactive installations.</p>
         <p><span>“We make amazing things happen online”.</span></p>
-      </content>
-    </container>
+      </div>
+    </div>
 
-    <container class="creative-study amazing-things">
-      <content>
-          <navigation>
-          <navitem>
+    <div class="container creative-study amazing-things">
+      <div class="content">
+          <div class="navigation">
+          <div class="navitem study-nav-button" study="amazing-things">
             <span>01</span>Amazing Things: Viral
-          </navitem>
-          <navitem>
+          </div>
+          <div class="navitem study-nav-button" study="tyco">
             <span>02</span>Tyco Mobile
-          </navitem>
-          <navitem>
+          </div>
+          <div class="navitem study-nav-button" study="duke-tip">
             <span>03</span>Duke Tip
-          </navitem>
-        </navigation>
-        <study title="amazing-things">
-          <div class="video-container"></div>
+          </div>
+        </div>
+        <div class="study" title="amazing-things">
+          <div class="video-div"></div>
           <h2>Amazing Things Start Here</h2>
           <p>We're a small team of creative minds.  We've been designing and building websites for clients for 10 years.</p>
-        </study>
+        </div>
 
-        <study title="tyco">
-          <div class="video-container"></div>
+        <div class="study" title="tyco">
+          <div class="video-div"></div>
           <h2>Tyco Global People Finder</h2>
           <p>We're a small team of creative minds.  We've been designing and building websites for clients for 10 years.</p>
-        </study>
+        </div>
 
-        <study title="duke-tip">
-          <div class="video-container"></div>
+        <div class="study" title="duke-tip">
+          <div class="video-div"></div>
           <h2>Duke Tip Website Build</h2>
           <p>We're a small team of creative minds.  We've been designing and building websites for clients for 10 years.</p>
-        </study>
-      </content>
-    </container>
+        </div>
+      </div>
+    </div>
 
-    <container class="work">
-      <content>
-          <navigation>
-          </navigation>
-          <workitems>
-          </workitems>
+    <div class="container work">
+      <div class="content">
+          <div class="navigation">
+          </div>
+          <div class="workitems">
+          </div>
         <script id="workItemTemplate" type="text/template">
           
           <div class="screenshot"><img src=<%= screenshot %> /></div>
-          <div class="button-container">
-          <navbutton class="html5-site">HTML5 Site</navbutton>
-          <navbutton class="flash-site">Flash Site</navbutton>
+          <div class="button-div">
+          <div class="navbutton html5-site">HTML5 Site</div>
+          <div class="navbutton flash-site">Flash Site</div>
           </div>
           
           <h2><%= name %></h2>
@@ -142,20 +151,20 @@
           <%= name %>
         </script>
         
-      </content>
-    </container>
+      </div>
+    </div>
 
-    <container class="team">
-      <content>
+    <div class="container team" id="team">
+      <div class="content">
         <h2>Amazing Things Start Here</h2>
-          <navigation>
-          </navigation>
-          <teammembers>
+          <div class="navigation">
+          </div>
+          <div class="teammembers">
           </teammembers>
         
         <script id="teamMemberTemplate" type="text/template">
-          <portrait><img src=<%= image %> height/></portrait>
-          <description> <%= description %> </description>
+          <div class="portrait"><img src=<%= image %> /></div>
+          <div class="description"> <%= description %> </div>
         </script>
 
 
@@ -164,42 +173,42 @@
           <h5><%= role %></h5>
         </script>
         
-      </content>
-    </container>
+      </div>
+    </div>
 
-    <container class="services">
-      <content>
+    <div class="container services">
+      <div class="content">
         <h2>Amazing Things Start Here</h2>
-        <diagram><img src="img/services-diagram.png"/></diagram>
-        <services>
-            <service>Idea Generation</service>
-            <service>Digital Strategy</service>
-            <service>Graphic Design</service>
-            <service>Architecture</service>
-            <service>Html 5 - Javascript Websites</service>
-            <service>Mobile & Tablet Apps</service>
-            <service>Flash Animaiton /Banner Ads</service>
-            <service>Viral Campaigns</service>
-            <service>Interactive Demos</service>
-            <service>Social Media - Research</service>
-            <service>Fashion & Retail Brands</service>
-            <service>Webisodes</service>
-            <service>in-Store Visual Displays</service>
-            <service>Web Video Production</service>
-        </services>
+        <div class="diagram"><img src="img/services-diagram.png"/></div>
+        <div class="services">
+            <div class="service">Idea Generation</div>
+            <div class="service">Digital Strategy</div>
+            <div class="service">Graphic Design</div>
+            <div class="service">Architecture</div>
+            <div class="service">Html 5 - Javascript Websites</div>
+            <div class="service">Mobile & Tablet Apps</div>
+            <div class="service">Flash Animaiton /Banner Ads</div>
+            <div class="service">Viral Campaigns</div>
+            <div class="service">Interactive Demos</div>
+            <div class="service">Social Media - Research</div>
+            <div class="service">Fashion & Retail Brands</div>
+            <div class="service">Webisodes</div>
+            <div class="service">in-Store Visual Displays</div>
+            <div class="service">Web Video Production</div>
+        </div>
 
-        <services>
-            <service>Partner Services</service>
-            <service>Planning And Research</service>
-            <service>3D Animation And Visual Effects</service>
-            <service>Film And Video Production</service>
-        </services>
+        <div class="services">
+            <div class="service">Partner Services</div>
+            <div class="service">Planning And Research</div>
+            <div class="service">3D Animation And Visual Effects</div>
+            <div class="service">Film And Video Production</div>
+        </div>
         
-      </content>
-    </container>
+      </div>
+    </div>
 
-    <container class="contact">
-      <content>
+    <div class="container contact">
+      <div class="content">
         <img src="img/contact-image.png" />
             <address>400 Meadowmont Village Circle<br >
               Suite 431, Chapel Hill, NC 27517</address>
@@ -211,8 +220,8 @@
             </ul>
         
         <h2>We Look Forward To Hearing From You</h2>
-      </content>
-    </container>
+      </div>
+    </div>
 <footer>
 
   </footer>
@@ -230,6 +239,9 @@
   <script src="js/libs/underscore.js"></script>
   <script src="js/libs/backbone.js"></script>
   <script src="js/libs/jquery-ui.js"></script>
+
+  <script src="js/libs/jquery.fancybox.pack.js"></script>
+  <script src="js/libs/jquery.mousewheel-3.0.6.pack.js"></script>
 
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>

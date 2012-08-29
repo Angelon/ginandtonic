@@ -2,6 +2,27 @@
 
 */
 
+$(document).ready(function() {
+    $(".home-images").fancybox({
+        openEffect  : 'none',
+        closeEffect : 'none',
+        wrapCSS : 'home-images'
+    });
+
+    $(".study-nav-button").click(function(){
+        var studyName = $(this).attr("study");
+        showStudy(studyName);
+    });
+});
+
+function showStudy(studyName){
+    $(".study").hide();
+    $("[title='"+studyName+"']").show();
+
+    $(".creative-study").attr("class","container creative-study");
+    $(".creative-study").addClass(studyName);
+}
+
 
 (function ($) {
  
@@ -100,7 +121,7 @@
     });
 
     var WorkItemView = Backbone.View.extend({
-        tagName: "workitem",
+        className: "workitem",
         template: $("#workItemTemplate").html(),
 
         render: function (){
@@ -111,7 +132,7 @@
     });
 
     var WorkView = Backbone.View.extend({
-    	el: $("container.work workitems"),
+    	el: $(".container.work .workitems"),
     	currentItemName:"",
 
     	initialize: function () {
@@ -162,7 +183,7 @@
     });
 
     var WorkCategoryView = Backbone.View.extend({
-		tagName: "category",
+		className: "category",
         template: $("#workNavTemplate").html(),
 
         render: function (){
@@ -173,7 +194,7 @@
     });
 
     var WorkNavItemView = Backbone.View.extend({
-    	tagName: "navitem",
+    	className: "navitem",
     	template: $("#workNavItemTemplate").html(),
     	render: function () {
     		var tmpl = _.template(this.template);
@@ -183,7 +204,7 @@
     });
 
     var WorkNavView = Backbone.View.extend({
-    	el: $("container.work navigation"),
+    	el: $(".container.work .navigation"),
     	types:[],
     	currentItemName:"",
 
@@ -242,7 +263,7 @@
 
 
     	events: {
-            "click container.work navitem": "showWorkItemByName"
+            "click .container.work .navitem": "showWorkItemByName"
         },
 
         showWorkItemByName: function (e){
@@ -256,7 +277,7 @@
 
     var workNavView = new WorkNavView();
     var workView = new WorkView();
-    $("container.work content navigation").accordion({ header: 'category', autoHeight:false, icons:false });
+    $(".container.work .content .navigation").accordion({ header: 'category', autoHeight:false, icons:false });
 
 
     var TeamMember = Backbone.Model.extend({
@@ -268,7 +289,7 @@
     });
 
     var TeamMemberView = Backbone.View.extend({
-    	tagName:"teammember",
+    	className:"teammember",
     	template: $("#teamMemberTemplate").html(),
 
         render: function (){
@@ -279,7 +300,7 @@
     });
 
     var TeamMembersView = Backbone.View.extend({
-    	el: $("container.team teammembers"),
+    	el: $(".container.team .teammembers"),
     	currentItemName:"",
 
     	initialize: function () {
@@ -325,7 +346,8 @@
     });
 
     var TeamMemberNavItemView = Backbone.View.extend({
-    	tagName:"navitem",
+    	tagName:"div",
+        className:"navItem",
     	template: $("#teamMemberNavItemTemplate").html(),
 
         render: function (){
@@ -336,7 +358,7 @@
     });
 
     var TeamMemberNav = Backbone.View.extend({
-    	el: $("container.team navigation"),
+    	el: $(".container.team .navigation"),
 
     	initialize: function () {
 	        this.collection = new TeamMemberList(people);
@@ -359,7 +381,7 @@
 	    },
 
 	    events: {
-            "click container.team navitem": "clickHandler"
+            "click .container.team .navitem": "clickHandler"
         },
 
         clickHandler: function (e){

@@ -84,11 +84,11 @@ pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 
 q { quotes: none; }
-q:before, q:after { content: ""; content: none; }
+q:before, q:after { .content: ""; .content: none; }
 
 small { font-size: 85%; }
 
-/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+/* Position subscript and superscript .content without affecting line-height: h5bp.com/k */
 sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
@@ -104,12 +104,12 @@ nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0
 
 
 /* =============================================================================
-   Embedded content
+   Embedded .content
    ========================================================================== */
 
 /*
  * 1. Improve image quality when scaled in IE7: h5bp.com/d
- * 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
+ * 2. Remove the gap between images and borders on image .containers: h5bp.com/i/440
  */
 
 img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
@@ -178,7 +178,7 @@ button[disabled], input[disabled] { cursor: default; }
  */
 
 input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
-input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: .content-box; -webkit-box-sizing: .content-box; box-sizing: .content-box; }
 input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
 
 /*
@@ -218,7 +218,7 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
-header {
+.header {
   height:100px; 
   width: 1025px; 
   display: block;
@@ -228,11 +228,11 @@ header {
   margin: 0, auto, 0, auto;
   z-index: 1000;
 }
-header navitem {
+.header .navitem {
   color:#b3b2b0; 
   display: inline-block;
 }
-header navitem.logo {
+.header .navitem.logo {
   width: 170px; 
   height: 100px; 
   background-image: url(../img/header-logo.png);
@@ -244,33 +244,34 @@ div[role="main"] {
   display: block;
 }
 
-container content p{
+.container .content p{
         color: #6f7071;
       }
 
-container.home {
+.container.home {
   height: 788px;
   display: block;
   background-image: url(../img/container-background-home.png);
   position: relative;
 }
 
-  container.home content {
+  .container.home .content {
     position: absolute;
     top:190px;
   }
 
-    container.home content #home-icons {
+    .container.home .content #home-icons {
       display: block;
     }
 
-      container.home content #home-icons navitem {
+      .container.home .content #home-icons .navitem {
         display: inline-block;
         magin: 0px 5px 0px 5px;
-        width:65px;
+        width:85px;
+        vertical-align: top;
       }
 
-        container.home content #home-icons navitem icon {
+        .container.home .content #home-icons .navitem .icon {
           height: 52px;
           width: 52px;
           display: block;
@@ -278,80 +279,87 @@ container.home {
           background-color: #585855;
         }
 
-        container.home content #home-icons navitem span {
+        .container.home .content #home-icons .navitem span {
           color: #585855;
           text-align: center;
           display: block;
         }
 
+        .container.home .content #home-icons .navitem a {
+          text-decoration: none;
+        }
 
-container content h2 {
+.home-images .fancybox-skin {
+  background: transparent;
+}
+
+.container .content h2 {
   background-color: #0b1016;
   color: #faf8de;
 }
 
-container content h2 .highlight {
+.container .content h2 .highlight {
   color: #c62b56;
 }
 
 
-container.culture {
+.container.culture {
   height: 1009px;
   display: block;
   background-image: url(../img/container-background-culture.png);
   position: relative;
 }
 
-    container.culture content {
+    .container.culture .content {
       position: absolute;
       top:138px;
       width: 385px;
     }
 
-      container.culture content p{
+      .container.culture .content p{
         color: #6f7071;
       }
 
-      container.culture content p span{
+      .container.culture .content p span{
         color: #fff;
       }
 
 
-container.creative-study {
+.container.creative-study {
   height: 769px;
   display: block;
   position: relative;
 }
 
-container.amazing-things {
+.container.amazing-things {
   background-image: url(../img/container-background-creative-study-amazing-things.png);
 }
 
-container.tyco {
+.container.tyco {
   background-image: url(../img/container-background-creative-study-tyco.png);
 }
 
-container.duke-tip {
+.container.duke-tip {
   background-image: url(../img/container-background-creative-study-duke-tip.png);
 }
 
-  container.creative-study content {
+  .container.creative-study .content {
     position: absolute;
     top: 123px;
   }
 
-    container.creative-study content navigation {
+    .container.creative-study .content .navigation {
       margin: 0px 0px 35px 0px;
       display: block;
       background-color: #0f151c;
     }
 
-      container.creative-study content navigation navitem{
+      .container.creative-study .content .navigation .navitem{
         color: #faf8de;
         display: block;
       }
 
-  container.creative-study content study {
+  .container.creative-study .content .study {
     width: 534px;
     height: 415px;
     background-color: #0f151c;
@@ -360,35 +368,35 @@ container.duke-tip {
     position: relative;
   }
 
-  container.creative-study content study .video-container {
+  .container.creative-study .content .study .video-.container {
     width: 507px;
     height: 285px;
     display: block;
     margin: 0px auto 10px auto;
   }
 
-  container.creative-study content study h2 {
+  .container.creative-study .content .study h2 {
 
   }
 
-  container.creative-study content study p {
+  .container.creative-study .content .study p {
 
   }
 
-  container.creative-study content [title="amazing-things"] {
+  .container.creative-study .content [title="amazing-things"] {
 
   }
 
-  container.creative-study content [title="amazing-things"] .video-container {
+  .container.creative-study .content [title="amazing-things"] .video-.container {
     background-image: url(../img/video-placeholder-amazing-things.png);
   }
 
 
-container.creative-study content [title="tyco"] {
+.container.creative-study .content [title="tyco"] {
   display:none;
   }
 
-  container.creative-study content study[title="tyco"] .video-container {
+  .container.creative-study .content .study[title="tyco"] .video-.container {
     background-image: url(../img/video-placeholder-tyco.png);
     position:absolute;
     left: 657px;
@@ -398,25 +406,25 @@ container.creative-study content [title="tyco"] {
   }
 
 
-  container.creative-study content [title="duke-tip"] {
+  .container.creative-study .content [title="duke-tip"] {
     display:none;
   }
 
-  container.creative-study content [title="duke-tip"] .video-container {
+  .container.creative-study .content [title="duke-tip"] .video-.container {
     background-image: url(../img/video-placeholder-duke-tip.png);
   }
-  container.creative-study.duke-tip content navigation {
+  .container.creative-study.duke-tip .content .navigation {
       margin: 0px 0px 35px 0px;
       display: block;
       background-color: #FFF;
     }
 
-      container.creative-study.duke-tip content navigation navitem{
+      .container.creative-study.duke-tip .content .navigation .navitem{
         color: #000;
         display: block;
       }
 
-  container.creative-study.duke-tip content study {
+  .container.creative-study.duke-tip .content .study {
     width: 534px;
     height: 415px;
     background-color: #FFF;
@@ -425,19 +433,19 @@ container.creative-study content [title="tyco"] {
   }
 
 
-container.work {
+.container.work {
   display: block;
   position: relative;
   background-color: #000;
 }
 
-container.work navigation {
+.container.work .navigation {
   display: block;
   width:352px;
   float:left;
 }
 
-container.work navigation category {
+.container.work .navigation .category {
   display: block;
   background: #151c26;
   border-radius: 0px;
@@ -446,34 +454,34 @@ container.work navigation category {
   padding: 3px;
 }
 
-container.work navigation div {
+.container.work .navigation div {
   background: transparent;
   border-radius: 0px;
   border: 0px solid #000;
   color: #faf8de;
 }
 
-container.work navigation div navitem {
+.container.work .navigation div .navitem {
   display: block;
 }
 
-container.work workitems {
+.container.work .workitems {
   width: 639px;
   display:block;
   margin: 0px 0px 0px 362px;
 }
 
-container.work workitem {
+.container.work .workitem {
   width: 639px;
   display:block;
 }
 
-container.work workitem .button-container {
+.container.work .workitem .button-.container {
   float:left;
   width: 232px;
 }
 
-container.work workitem navbutton{
+.container.work .workitem .navbutton{
   width: 232px;
   height: 33px;
   background-color: #CCC;
@@ -481,98 +489,98 @@ container.work workitem navbutton{
   display: block;
 }
 
-container.work workitem .screenshot {
+.container.work .workitem .screenshot {
   width: 639px;
 }
 
-container.work workitem navbutton.html5-site {
+.container.work .workitem .navbutton.html5-site {
 }
 
-container.work workitem navbutton.flash-site {
+.container.work .workitem .navbutton.flash-site {
 }
 
-container.work workitem p {
+.container.work .workitem p {
   margin-left: 251px;
 }
 
-container.work workitem h2 {
+.container.work .workitem h2 {
   margin: 5px 0px 5px 251px;
 }
 
-container.team {
+.container.team {
   display: block;
 }
 
-container.team navigation {
+.container.team .navigation {
   float:left;
   width:352px;
   display: block;
 }
 
-container.team navigation navitem{
+.container.team .navigation .navitem{
   display: block;
 }
 
-container.team navigation h3{
+.container.team .navigation h3{
   color: #faf8de;
   margin: 0px 0px 0px 0px;
 }
 
-container.team navigation h5{
+.container.team .navigation h5{
   color: #95afb4;
   margin: 0px 0px 0px 0px;
 }
 
-container.team teammembers {
+.container.team .teammembers {
   margin: 0px 0px 0px 352px;
   display: block;
 }
 
-container.team teammembers teammember{
+.container.team .teammembers .teammember{
   width: 354px;
   margin: 0px auto 0px auto;
   display: block;
 }
 
-container.team teammembers teammember portrait{
+.container.team .teammembers .teammember .portrait{
   width: 354px;
   height: 327px;
   display: block;
 }
 
-container.team teammembers teammember description{
+.container.team .teammembers .teammember .description{
   color: #747576;
   display: block;
 }
 
-container.services h2 {
+.container.services h2 {
 
 }
 
-container.services diagram{
+.container.services .diagram{
   display: block;
   float:left;
   width: 710px;
 }
 
-container.services services{
+.container.services .services{
   display: block;
   margin: 0px 0px 0px 710px;
 }
 
-container.services services service{
+.container.services .services .service{
   display: block;
   color: #9d9b9b;
 }
 
-container.contact {
+.container.contact {
   height: 1009px;
   display: block;
   background-image: url(../img/container-background-culture.png);
   position: relative;
 }
 
-container.contact content {
+.container.contact .content {
   width: 417px;
   height: 515px;
   display: block;
@@ -582,16 +590,16 @@ container.contact content {
   top: 133px;
 }
 
-container.contact img {
+.container.contact img {
   display: block;
 }
 
 
-container.contact content street{
+.container.contact .content .street{
   display: block;
 }
 
-container.contact content ul{
+.container.contact .content ul{
   list-style-type: none;
 }
 
@@ -608,7 +616,7 @@ footer {
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
    This example overrides the primary ('mobile first') styles
-   Modify as content requires.
+   Modify as .content requires.
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
@@ -638,7 +646,7 @@ footer {
 .invisible { visibility: hidden; }
 
 /* Contain floats: h5bp.com/q */
-.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:before, .clearfix:after { .content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { *zoom: 1; }
 
@@ -652,9 +660,9 @@ footer {
 @media print {
   * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
   a, a:visited { text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
-  abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  a[href]:after { .content: " (" attr(href) ")"; }
+  abbr[title]:after { .content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { .content: ""; }  /* Don't show links for images, or javascript/internal links */
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
   thead { display: table-header-group; } /* h5bp.com/t */
   tr, img { page-break-inside: avoid; }
