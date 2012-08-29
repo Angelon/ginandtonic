@@ -218,6 +218,10 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
+.navitem {
+  cursor: pointer;
+}
+
 .header {
   height:100px; 
   width: 1025px; 
@@ -228,9 +232,27 @@ td { vertical-align: top; }
   margin: 0, auto, 0, auto;
   z-index: 1000;
 }
+.header .navigation {
+  height: 100px;
+}
 .header .navitem {
   color:#b3b2b0; 
   display: inline-block;
+  width:110px;
+  text-align: center;
+  line-height: 100px;
+  vertical-align: middle;
+}
+
+.header .navitem.active {
+  color:#ff00cc; 
+}
+
+.header .navitem a {
+  color:#b3b2b0;
+  display: block;
+  line-height: 100px;
+  text-decoration: none;
 }
 .header .navitem.logo {
   width: 170px; 
@@ -244,9 +266,14 @@ div[role="main"] {
   display: block;
 }
 
+.container {
+  padding-top:100px;
+  background-repeat: no-repeat;
+}
+
 .container .content p{
-        color: #6f7071;
-      }
+  color: #6f7071;
+}
 
 .container.home {
   height: 788px;
@@ -357,6 +384,18 @@ div[role="main"] {
       .container.creative-study .content .navigation .navitem{
         color: #faf8de;
         display: block;
+        padding: 5px;
+      }
+
+      .container.creative-study .content .navigation .navitem span {
+        display: inline-block;
+        width: 20px;
+        text-align: center;
+        font-size: 10px;
+      }
+
+      .container.creative-study .content .navigation .navitem.active {
+        color:#ff00cc; 
       }
 
   .container.creative-study .content .study {
@@ -424,6 +463,10 @@ div[role="main"] {
         display: block;
       }
 
+      .container.creative-study.duke-tip .content .navigation .navitem.active {
+        color:#ff00cc; 
+      }
+
   .container.creative-study.duke-tip .content .study {
     width: 534px;
     height: 415px;
@@ -454,6 +497,13 @@ div[role="main"] {
   padding: 3px;
 }
 
+.container.work .navigation .category span {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  font-size: 10px;
+}
+
 .container.work .navigation div {
   background: transparent;
   border-radius: 0px;
@@ -476,7 +526,7 @@ div[role="main"] {
   display:block;
 }
 
-.container.work .workitem .button-.container {
+.container.work .workitem .button-div {
   float:left;
   width: 232px;
 }

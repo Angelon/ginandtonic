@@ -39,14 +39,14 @@
   <div role="main">
     <div class="header">
     <div class="navigation">
-      <div class="navitem logo"></div>
-      <div class="navitem">Culture</div>
-      <div class="navitem">Creative Study</div>
-      <div class="navitem">Work</div>
-      <div class="navitem">The Team</div>
-      <div class="navitem">Services</div>
-      <div class="navitem">Contact</div>
-      <div class="navitem">TW F V YT</div>
+      <div class="navitem logo" destination="home"></div>
+      <div class="navitem" destination="culture">Culture</div>
+      <div class="navitem" destination="creative-study">Creative Study</div>
+      <div class="navitem" destination="work">Work</div>
+      <div class="navitem" destination="team">The Team</div>
+      <div class="navitem" destination="services">Services</div>
+      <div class="navitem" destination="contact">Contact</div>
+      <div class="navitem" destination="none">TW F V YT</div>
     </div>
   </div>
     <div class="container home">
@@ -94,7 +94,7 @@
     <div class="container creative-study amazing-things">
       <div class="content">
           <div class="navigation">
-          <div class="navitem study-nav-button" study="amazing-things">
+          <div class="navitem study-nav-button active" study="amazing-things">
             <span>01</span>Amazing Things: Viral
           </div>
           <div class="navitem study-nav-button" study="tyco">
@@ -154,7 +154,7 @@
       </div>
     </div>
 
-    <div class="container team" id="team">
+    <div class="container team">
       <div class="content">
         <h2>Amazing Things Start Here</h2>
           <div class="navigation">
@@ -175,6 +175,7 @@
         
       </div>
     </div>
+  </div>
 
     <div class="container services">
       <div class="content">
@@ -239,6 +240,7 @@
   <script src="js/libs/underscore.js"></script>
   <script src="js/libs/backbone.js"></script>
   <script src="js/libs/jquery-ui.js"></script>
+  <script src="js/libs/jquery.scrollTo.js"></script>
 
   <script src="js/libs/jquery.fancybox.pack.js"></script>
   <script src="js/libs/jquery.mousewheel-3.0.6.pack.js"></script>

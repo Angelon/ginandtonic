@@ -2,6 +2,12 @@
 
 */
 
+if(typeof String.prototype.trim !== 'function') {
+  String.prototype.trim = function() {
+    return this.replace(/^\s+|\s+$/g, ''); 
+  }
+}
+
 $(document).ready(function() {
     $(".home-images").fancybox({
         openEffect  : 'none',
@@ -13,7 +19,30 @@ $(document).ready(function() {
         var studyName = $(this).attr("study");
         showStudy(studyName);
     });
+   //console.log(window.location);
+    $(".header .navitem").click(function(){
+        var destination = $(this).attr("destination");
+        var currentHash = window.location.hash.replace("#", "");
+        if(currentHash == destination){
+            goToSection(destination);
+        }
+        window.location = window.location.protocol + "//" + window.location.hostname + window.location.pathname + "#" + destination;
+    });
+
+    $(".container").css("min-height",$(window).height());
+    $(window).bind('hashchange', function(e) {
+        e.preventDefault();
+        var targetName = window.location.hash.replace("#","");
+        goToSection(targetName);
+    });
 });
+
+function goToSection(targetName){
+    var element = $(".container."+targetName);
+    $(window).scrollTo(element, 800);
+    $(".header .navitem").removeClass("active");
+    $(".header .navitem[destination="+targetName+"]").addClass("active");
+}
 
 function showStudy(studyName){
     $(".study").hide();
@@ -21,6 +50,9 @@ function showStudy(studyName){
 
     $(".creative-study").attr("class","container creative-study");
     $(".creative-study").addClass(studyName);
+
+    $(".container.creative-study .content .navigation .navitem").removeClass("active");
+    $(".container.creative-study .content .navigation .navitem[study="+studyName+"]").addClass("active");
 }
 
 
@@ -217,9 +249,10 @@ function showStudy(studyName){
 
 	    render: function () {
 	        var that = this;
+
 	        _.each(this.types.models, function (type) {
 	            filtered = _.filter(that.collection.models, function (item) {
-	            	return item.get("type").toLowerCase() === type.get("type");
+	            	return (item.get("type")) ? item.get("type").toLowerCase() === type.get("type") : false;
 	        	});
 
 	            that.renderCategory(type, filtered);
@@ -252,9 +285,13 @@ function showStudy(studyName){
 		        return type;
 		    });
 		    for(var x in types){
-		    	typeCounter++;
-		        var typeObject = {"type": types[x].toLowerCase(), number:typeCounter, "title":types[x]};
-		        myTypes.push(typeObject);
+
+                if(types[x] != undefined && types[x] != "undefined"){
+                    typeCounter++;
+                    var typeObject = {"type": types[x].toLowerCase(), number:typeCounter, "title":types[x]};
+                    myTypes.push(typeObject);
+                }
+		    	
 		    }
 		    myTypes = new WorkCategoryList(myTypes);
     		return myTypes;
@@ -267,7 +304,8 @@ function showStudy(studyName){
         },
 
         showWorkItemByName: function (e){
-		    var itemName = $(e.target).html().trim();
+		    var item = $(e.target);
+            itemName = item.html().trim();
 		    if(workView){
 		    	workView.showWorkItemByName(itemName);
 		    }
@@ -277,7 +315,7 @@ function showStudy(studyName){
 
     var workNavView = new WorkNavView();
     var workView = new WorkView();
-    $(".container.work .content .navigation").accordion({ header: 'category', autoHeight:false, icons:false });
+    $(".container.work .content .navigation").accordion({ header: '.category', autoHeight:false, icons:false });
 
 
     var TeamMember = Backbone.Model.extend({
@@ -339,7 +377,7 @@ function showStudy(studyName){
 	            return item.get("name") === currentItemName;
 	        });
 
-	            console.log(currentItemName);
+	            
 	 
 	        this.collection.reset(filtered);
         }
@@ -347,7 +385,7 @@ function showStudy(studyName){
 
     var TeamMemberNavItemView = Backbone.View.extend({
     	tagName:"div",
-        className:"navItem",
+        className:"navitem",
     	template: $("#teamMemberNavItemTemplate").html(),
 
         render: function (){
