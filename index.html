@@ -21,6 +21,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/idangerous.swiper.css">
   <link rel="stylesheet" href="css/ui-lightness/jquery-ui.custom.css">
   <link rel="stylesheet" href="css/fancybox/jquery.fancybox.css">
 
@@ -46,34 +47,88 @@
       <div class="navitem" destination="team">The Team</div>
       <div class="navitem" destination="services">Services</div>
       <div class="navitem" destination="contact">Contact</div>
-      <div class="navitem" destination="none">TW F V YT</div>
+      <div class="navitem social" destination="none">
+        <div class="socialitem">
+          <a href="#"><img src="img/social-twitter.png" /></a>
+        </div>
+        <div class="socialitem">
+          <a href="#"><img src="img/social-facebook.png" /></a>
+        </div>
+        <div class="socialitem">
+          <a href="#"><img src="img/social-vimeo.png" /></a>
+        </div>
+        <div class="socialitem">
+          <a href="#"><img src="img/social-youtube.png" /></a>
+        </div>
+      </div>
     </div>
   </div>
     <div class="container home">
+      <div id="home-slider" class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide mobile">
+              
+            </div>
+
+            <div class="swiper-slide touchwall">
+              
+            </div>
+
+            <div class="swiper-slide websites">
+              
+            </div>
+
+            <div class="swiper-slide motion">
+              
+            </div>
+
+            <div class="swiper-slide video">
+              
+            </div>
+          </div>
+          <div class="close-button"></div>
+        </div>
       <div class="content">
-        <h2><span class="highlight">A digital design agency.</span> Specializing <br> in online visual entertainment</h2>
+
+        <h2><span class="highlight">A digital design agency.</span> <br>Specializing in online visual entertainment</h2>
         <div class="navigation" id="home-icons">
-          <div class="navitem">
-            <a class="home-images" rel="home-gallery" href="img/home/mobile.png">
-            <div class="icon"></div>
+          <div class="navitem" contentindex="0">
+            <!-- <a class="home-images" rel="home-gallery" href="img/home/mobile.png"> -->
+            <div class="icon mobile">
+              <img src="img/home/icon-overlay-mobile.png" />
+            </div>
             <span>Mobile</span>
             </a>
           </div>
-          <div class="navitem">
-            <a class="home-images" rel="home-gallery" href="img/home/responsive-websites.png">
-            <div class="icon"></div>
-            <span>Responsive Websites</span>
+          <div class="navitem" contentindex="1">
+            <!-- <a class="home-images" rel="home-gallery" href="img/home/responsive-websites.png"> -->
+            <div class="icon responsive-websites">
+              <img src="img/home/icon-overlay-responsive-websites.png" />
+            </div>
+            <span>Touchwall</span>
             </a>
           </div>
-          <div class="navitem">
-            <a class="home-images" rel="home-gallery" href="img/home/motion.png">
-            <div class="icon"></div>
+          <div class="navitem" contentindex="2">
+            <!-- <a class="home-images" rel="home-gallery" href="img/home/responsive-websites.png"> -->
+            <div class="icon responsive-websites">
+              <img src="img/home/icon-overlay-responsive-websites.png" />
+            </div>
+            <span>Websites</span>
+            </a>
+          </div>
+          <div class="navitem" contentindex="3">
+            <!-- <a class="home-images" rel="home-gallery" href="img/home/motion.png"> -->
+            <div class="icon motion">
+              <img src="img/home/icon-overlay-motion.png" />
+            </div>
             <span>Motion</span>
             </a>
           </div>
-          <div class="navitem">
-            <a class="home-images" rel="home-gallery" href="img/home/video.png">
-            <div class="icon"></div>
+          <div class="navitem" contentindex="4">
+            <!-- <a class="home-images" rel="home-gallery" href="img/home/video.png"> -->
+            <div class="icon video">
+              <img src="img/home/icon-overlay-video.png" />
+            </div>
             <span>Video</span>
             </a>
           </div>
@@ -83,7 +138,7 @@
 
     <div class="container culture">
       <div class="content">
-        <h2>We are trendsetters, brand enhancers, visionaries, with infinite creative ideas.</h2>
+        <h2><span class="highlight">We are trendsetters,</span> brand enhancers,<br>visionaries, with infinite creative ideas.</h2>
         <p>Tim McCracken's vision to create a fully charged digital design agency specializing in online visual entertainment was born in 2008 as Gin and Tonic.  Located in Chapel Hill, North Carolina servicing clients throughout North America and the UK.</p>
         <p>In today’s digital era, technology constantly evolves whilst the market continually adapts. At Gin and Tonic we embrace this rapid metamorphose and are in the vanguard of the latest trends enabling us to inspire our clients.</p>
         <p>Today, Tim leads an interactive team of vibrant and talented designers, programmers, producers and animators, whose creative abilities and experiences, aligned with today’s current trends, are designed to achieve success and gain a distinctive edge in today’s marketplace.  Our Team can build the vital tools to successfully reach your target audience through brand recognition and social media, to showcase the impact of digital advertising, from innovative websites, mobile and tablet apps, video production and interactive installations.</p>
@@ -105,19 +160,19 @@
           </div>
         </div>
         <div class="study" title="amazing-things">
-          <div class="video-div"></div>
+          <div class="video-container"></div>
           <h2>Amazing Things Start Here</h2>
           <p>We're a small team of creative minds.  We've been designing and building websites for clients for 10 years.</p>
         </div>
 
         <div class="study" title="tyco">
-          <div class="video-div"></div>
+          <div class="video-container"></div>
           <h2>Tyco Global People Finder</h2>
           <p>We're a small team of creative minds.  We've been designing and building websites for clients for 10 years.</p>
         </div>
 
         <div class="study" title="duke-tip">
-          <div class="video-div"></div>
+          <div class="video-container"></div>
           <h2>Duke Tip Website Build</h2>
           <p>We're a small team of creative minds.  We've been designing and building websites for clients for 10 years.</p>
         </div>
@@ -179,7 +234,7 @@
 
     <div class="container services">
       <div class="content">
-        <h2>Amazing Things Start Here</h2>
+        <h2>We believe success is achieved through an equal partnership.  Getting you results is our goal.</h2>
         <div class="diagram"><img src="img/services-diagram.png"/></div>
         <div class="services">
             <div class="service">Idea Generation</div>
@@ -211,13 +266,13 @@
     <div class="container contact">
       <div class="content">
         <img src="img/contact-image.png" />
-            <address>400 Meadowmont Village Circle<br >
-              Suite 431, Chapel Hill, NC 27517</address>
+            <div class="street">400 Meadowmont Village Circle Suite<br >
+            431, Chapel Hill, NC 27517</div>
             <ul>
-              <li><span>Email:</span></li>
-              <li><span>Phone:</span></li>
-              <li><span>Follow Us:</span></li>
-              <li><span>Skype:</span></li>
+              <li><span>Email:</span> tim@ginandtonicagency.com</li>
+              <li><span>Phone:</span> 919.323.0153</li>
+              <li><span>Follow Us:</span> tim@ginandtonicagency</li>
+              <li><span>Skype:</span> TimothyMcCracken</li>
             </ul>
         
         <h2>We Look Forward To Hearing From You</h2>
@@ -237,10 +292,15 @@
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
   <!-- scripts concatenated and minified via build script -->
+  <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+  <script src="http://vjs.zencdn.net/c/video.js"></script>
+
   <script src="js/libs/underscore.js"></script>
   <script src="js/libs/backbone.js"></script>
   <script src="js/libs/jquery-ui.js"></script>
   <script src="js/libs/jquery.scrollTo.js"></script>
+
+  <script src="js/libs/idangerous.swiper-1.9.min.js"></script>
 
   <script src="js/libs/jquery.fancybox.pack.js"></script>
   <script src="js/libs/jquery.mousewheel-3.0.6.pack.js"></script>

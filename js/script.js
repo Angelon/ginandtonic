@@ -9,11 +9,37 @@ if(typeof String.prototype.trim !== 'function') {
 }
 
 $(document).ready(function() {
-    $(".home-images").fancybox({
+    var swiper = $("#home-slider").swiper();
+
+    $("#home-icons .navitem").bind("click", function(){
+        $("#home-icons .navitem .icon").removeClass("active");
+        $(this).children(".icon").addClass("active");
+        $("#home-slider").animate({"opacity":"1"});
+        var index = parseInt($(this).attr("contentindex"));
+        swiper.swipeTo(index);
+    });
+
+    $("#home-slider .close-button").bind("click", function(){
+        $("#home-icons .navitem .icon").removeClass("active");
+        $("#home-slider").animate({"opacity":"0"});
+    });
+    /*$(".home-images").fancybox({
         openEffect  : 'none',
         closeEffect : 'none',
-        wrapCSS : 'home-images'
-    });
+        wrapCSS : 'home-images',
+        afterLoad : function (e){
+            console.log("SOmething");
+            console.log(e);
+            console.log(this);
+            var itemName = e.href.replace("img/home/","").replace(".png","");
+            console.log(itemName);
+            $(".container.home .content #home-icons .navitem .icon").removeClass("active");
+            $(".container.home .content #home-icons .navitem .icon."+itemName).addClass("active");
+        },
+        afterClose : function (e){
+            $(".container.home .content #home-icons .navitem .icon").removeClass("active");
+        }
+    });*/
 
     $(".study-nav-button").click(function(){
         var studyName = $(this).attr("study");
@@ -35,6 +61,8 @@ $(document).ready(function() {
         var targetName = window.location.hash.replace("#","");
         goToSection(targetName);
     });
+
+    
 });
 
 function goToSection(targetName){
@@ -59,61 +87,61 @@ function showStudy(studyName){
 (function ($) {
  
     var workitems = [
-        { name: "Out Of Town.TV", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website",
+        { name: "Out Of Town.TV", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website", screenshot : "out-of-town-tv.png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-        { name: "ESPN Endless Drama", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website",
+        { name: "ESPN Endless Drama", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website", screenshot : "espn-endless-drama.png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-        { name: "Duke Tip", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website",
+        { name: "Duke Tip", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website", screenshot : "duke-tip.png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-        { name: "Scott Safety", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website",
+        { name: "Scott Safety", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website", screenshot : "scott-safety.png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-        { name: "FGI Research", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website",
+        { name: "FGI Research", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website", screenshot : "fgi-research.png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-        { name: "Instyle Trendsetters", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website",
+        { name: "Instyle Trendsetters", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website", screenshot : "instyle-trendsetters.png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-        { name: "Target Redcard", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website",
+        { name: "Target Redcard", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website", screenshot : "target-redcard.png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-        { name: "3:10 To Yuma", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website",
+        { name: "3:10 To Yuma", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website", screenshot : "310-to-yuma.png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-        { name: "Polaris Duel", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website",
+        { name: "Polaris Duel", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website", screenshot : "polaris.png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-        { name: "Hilton Head", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website",
+        { name: "Hilton Head", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website", screenshot : "hilton-head.png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-        { name: "Onemba", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website",
+        { name: "Onemba", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website", screenshot : "onemba.png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-        { name: "Ikaati", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website",
+        { name: "Ikaati", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website", screenshot : "ikaati.png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-        { name: "Best Buy", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website",
+        { name: "Best Buy", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "website", screenshot : "bestbuy.png",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-        { name: "Best Buy", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "video",
+        { name: "Best Buy Video", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "video",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-        { name: "Ikaati", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "video",
+        { name: "Ikaati Video", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "video",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-{ name: "Best Buy", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "video",
+        { name: "Best Buy Video 2", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "video",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-        { name: "Ikaati", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "video",
+        { name: "Ikaati Video 2", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "video",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-        { name: "Best Buy", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "animation",
+        { name: "Best Buy Animation", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "animation",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
 
-        { name: "Best Buy", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "mobile",
+        { name: "Best Buy Mobile", header: "Duke Tip Rebrand", html5url: "0123456789", flashurl: "anemail@me.com", type : "mobile",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales odio nec justo semper tristique. Donec iaculis sollicitudin est. Nulla pulvinar risus eget ante vehicula at venenatis sem rutrum. Morbi dignissim justo in orci gravida at laoreet dui tempus. Duis ac libero mi, non venenatis felis. Aliquam lectus ipsum, congue et gravida vel, gravida et elit." },
     ];
 
@@ -145,7 +173,15 @@ function showStudy(studyName){
         ];
 
     var WorkItem = Backbone.Model.extend({
-    	defaults:{screenshot:"img/screenshot-placeholder.png"}
+    	defaults:{screenshot:"screenshot-placeholder.png"},
+        initialize:function (){
+            var screenshotPath = "img/work/";
+            if(this.get("screenshot") != "screenshot-placeholder.png"){
+                screenshotPath += this.get("type") + "/";
+            }
+            screenshotPath += this.get("screenshot");
+            this.set({screenshot:screenshotPath});
+        }
     });
 
     var WorkItemList = Backbone.Collection.extend({
@@ -188,7 +224,7 @@ function showStudy(studyName){
 	        this.$el.html(workItemView.render().el);
 	    },
 
-	    showWorkItemByName: function (itemName){
+	    showWorkItemByName: function (itemName, workView){
         	if (itemName === "") {
 				this.currentItemName = this.collection.models[0].get("name");
 		    }
@@ -203,6 +239,7 @@ function showStudy(studyName){
 	        });
 	 
 	        this.collection.reset(filtered);
+            workNavView.updateActiveItem(this.currentItemName);
         }
     });
 
@@ -231,6 +268,8 @@ function showStudy(studyName){
     	render: function () {
     		var tmpl = _.template(this.template);
             this.$el.html(tmpl(this.model.toJSON()));
+            //console.log(this.model);
+            this.$el.attr("title",this.model.get("name"));
             return this;
     	}
     });
@@ -304,11 +343,16 @@ function showStudy(studyName){
         },
 
         showWorkItemByName: function (e){
-		    var item = $(e.target);
+            var item = $(e.target);
             itemName = item.html().trim();
 		    if(workView){
 		    	workView.showWorkItemByName(itemName);
 		    }
+        },
+
+        updateActiveItem: function(itemName){
+            $(".container.work .navigation div .navitem").removeClass("active");
+            $(".container.work .navigation div .navitem[title='" + itemName + "']").addClass("active");
         }
 
     });
@@ -376,7 +420,7 @@ function showStudy(studyName){
 	            filtered = _.filter(this.collection.models, function (item) {
 	            return item.get("name") === currentItemName;
 	        });
-
+            teamMemberNav.updateActiveItem(this.currentItemName);
 	            
 	 
 	        this.collection.reset(filtered);
@@ -391,6 +435,7 @@ function showStudy(studyName){
         render: function (){
             var tmpl = _.template(this.template);
             this.$el.html(tmpl(this.model.toJSON()));
+            this.$el.attr("membername", this.model.get("name"));
             return this;
         }
     });
@@ -427,6 +472,11 @@ function showStudy(studyName){
 		    if(teamMembersView){
 		    	teamMembersView.showTeamMemberByName(itemName);
 		    }
+        },
+
+        updateActiveItem: function(itemName){
+            $(".container.team .navigation .navitem").removeClass("active");
+            $(".container.team .navigation .navitem[membername='" + itemName + "']").addClass("active");
         }
     });
 
